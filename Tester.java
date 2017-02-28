@@ -2,7 +2,7 @@
 public class Tester {
 	
 	public static void main(String args[]) {
-		Node root1 = new Node(1);
+		Node root1 = new Node(1); // root node for binary tree
 		root1.insert(4);
 		root1.insert(3);
 		
