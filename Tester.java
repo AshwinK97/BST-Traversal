@@ -7,7 +7,7 @@ package assignment2;
  * 		Kaushal Patel
  * 		Ashwin Kamalakannan
  * 
- * - Binary tree testing class
+ * - Binary search tree testing class
  * - Contains methods:
  * 		- Load(int[], String) constructs binary tree from given traversal and type O(n) time
  * 		- printTree(Node) prints all traversals of a given tree in O(n) time
@@ -78,7 +78,7 @@ public class Tester {
 	 */
 	public static void main(String args[]) {
 		int[] input = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 }; // input array
-		long runTime; // allocate memory to store runtime
+		long runTime; // to store runtime
 		
 		load(input, "preorder");
 		
