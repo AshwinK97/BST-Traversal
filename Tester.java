@@ -1,3 +1,5 @@
+package assignment2;
+
 /**
  * @authors:
  * 		Darron Singh
@@ -69,7 +71,6 @@ public class Tester {
 		System.out.println();
 		System.out.print("postorder: ");
 		root.printPostOrder(); // print postorder
-		System.out.println("\n");
 	}
 	
 	/*
@@ -77,18 +78,29 @@ public class Tester {
 	 */
 	public static void main(String args[]) {
 		int[] input = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 }; // input array
-
+		long runTime; // allocate memory to store runtime
+		
+		load(input, "preorder");
+		
 		// load tree with preorder traversal and print it
 		System.out.println("Pre-order given");
+		runTime = System.nanoTime();
 		printTree(load(input, "preorder"));
+		runTime = System.nanoTime() - runTime;
+		System.out.println("\nruntime: " + ((double)runTime)/1000000 + "ms\n");
 
 		// load tree with inorder traversal and print it
 		System.out.println("In-order given");
+		runTime = System.nanoTime();
 		printTree(load(input, "inorder"));
+		runTime = System.nanoTime() - runTime;
+		System.out.println("\nruntime: " + ((double)runTime)/1000000 + "ms\n");
 
 		// load tree with postorder traversal and print it
 		System.out.println("Post-order given");
+		runTime = System.nanoTime();
 		printTree(load(input, "postorder"));
-
+		runTime = System.nanoTime() - runTime;
+		System.out.println("\nruntime: " + ((double)runTime)/1000000 + "ms\n");
 	}
 }
