@@ -5,12 +5,12 @@
  * 		Kaushal Patel
  * 		Ashwin Kamalakannan
  * 
- * - Binary tree node class
+ * - Binary search tree node class
  * - Any single instance of a Node an be used to create a whole tree
+ * - Assume trees are balanced
  * - contains methods:
- * 		- recursive insert(int) O(log n) time
- * 		- recursive contains(int) O(log n) time
- *  		- printPreOrder(), printInOrder() and printPostOrder() all O(n) time
+ * 		- recursive insert(int), O(log n) time
+ *  		- printPreOrder(), printInOrder() and printPostOrder(), all O(n) time
  */
 
 public class Node {
@@ -38,25 +38,6 @@ public class Node {
 				right = new Node(value); // create right child and set value
 			else
 				right.insert(value); // if not, recall function for right child node
-		}
-	}
-	
-	/*
-	 * finds given data in tree and returns true if it exists, false otherwise
-	 */
-	public boolean contains(int value) {
-		if (value == data) // if value = current node's data, return true
-			return true;
-		else if (value < data) { // if value is less than current node's data
-			if (left == null) // return false if left child node is empty
-				return false;
-			else // if not empty, recall function for left child node
-				return left.contains(value);
-		} else { // if value is greater than current node's data
-			if (right == null) // return false if right child node is empty
-				return false;
-			else // if not empty, recall function for the right child node
-				return right.contains(value);
 		}
 	}
 	
